@@ -35,7 +35,7 @@ body{
     margin-top: 10px;
 }
 
-#input-box, #submit{
+#inputbox, #submit{
     padding: 12px;
     font-weight: bold;
     border-radius: 5px;
@@ -49,4 +49,86 @@ body{
 
 #submit{
     cursor: pointer;
+    margin-left: 4px;
+}
+
+/*Styling for "Now Playing*/
+.section-header{
+    display: flex;
+    background-color: #333;
+    margin-top: 20px;
+    justify-content: center;
+    border-radius: 10px;
+}
+.nowPlaying{
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+}
+
+
+/*Styling for Movie Area*/
+.oneMovie{
+    width: 200px;
+    height: 300px;
+}
+
+.movie-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.innerMovieArea{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #333;
+}
+
+
+.movie-title, .rating{
+    color: white;
+    font-size: 14px;
+}
+
+.rating{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.movie-title{
+    overflow-wrap: break-word;
+    width: 150px;
+}
+
+
+
+
+/*Styling for Footer*/
+.footer{
+    display: flex;
+    justify-content: space-around;
+    margin: 15px;
+}
+
+.getMore{
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity .15s;
+}
+
+.getMore:hover{
+    opacity:.5;
+}
+
+
+/*Footer Styling*/
+.closed{
+    display: none;
 }
