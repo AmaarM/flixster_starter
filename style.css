@@ -37,7 +37,7 @@ body{
     margin-top: 10px;
 }
 
-#inputbox, #submit{
+#inputbox, #submit, .clear{
     padding: 12px;
     font-weight: bold;
     border-radius: 5px;
@@ -45,11 +45,11 @@ body{
     transition: opacity .15s;
 }
 
-#submit:hover{
+#submit:hover, .clear:hover{
     opacity: .5;
 }
 
-#submit{
+#submit, .clear{
     cursor: pointer;
     margin-left: 4px;
 }
@@ -58,7 +58,7 @@ body{
 .section-header{
     display: flex;
     background-color: gray;
-    margin-top: 20px;
+    margin-top: 40px;
     justify-content: center;
     border-style: groove;
     border-color: #333;
@@ -185,4 +185,8 @@ body{
     padding-left: 2px;
     padding-right: 2px;
     
+}
+
+.practice{
+    background-color: white;;
 }

@@ -11,6 +11,8 @@ const showInfoBtn = document.querySelector(".show-more");
 const closeButton = document.querySelector(".closeBtn");
 const trendingBtn = document.querySelector(".trending");
 const nowPlaying = document.querySelector(".nowPlaying");
+const clearBtn = document.querySelector(".clear");
+const popUpArea = document.querySelector(".pop-up");
 let page = 1;
 
 
@@ -31,13 +33,13 @@ async function displayMovies(data){
     let moviePath = `https://image.tmdb.org/t/p/w185` + data.poster_path;
     let movieTitle = data.title;
     let movieRating = data.vote_average;
-
+    console.log(data);
     movieArea.innerHTML += ` 
     <div class="innerMovieArea">     
         <img class="oneMovie" src='${moviePath}'>    
         <h3 class="rating">Rating: ${movieRating} </h3>
         <h3 class="movie-title">${movieTitle}</h3>
-        <button class="show-more">Show Info</button>
+        <button class="show-more" onclick="showPopUp(${data.id})">Show Info</button>
     </div>`
     footer.classList.remove('closed')
 }
@@ -62,8 +64,7 @@ async function searchMovie(e){
     const data = await fetch(url);
     const searchData = await data.json();
     
-
-    searchData.results.forEach(e =>{
+    searchData.results.forEach(e => {
         displayMovies(e);
     });
 
@@ -82,6 +83,7 @@ async function displayNewResults(e){
 
 nowPlaying.addEventListener('click', e =>{
     movieArea.innerHTML = "";
+    textBox.value = "";
     getMovies(e);
 })
 
@@ -90,13 +92,37 @@ async function showTrending(){
     let url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${page}`
     const data = await fetch(url);
     const getData = await data.json();
+    textBox.value = "";
+    
 
-    page+=1;
     movieArea.innerHTML = "";
     getData.results.forEach(e =>{
         displayMovies(e);
     });
 }
+
+clearBtn.addEventListener('click', clearSearch);
+async function clearSearch(e){
+    textBox.value = "";
+    movieArea.innerHTML = "";
+    nowPlaying(e);
+}
+
+
+function showPopUp(id){
+    popUpArea.innerHTML += `
+    <div>
+        <p class="practice">Hello</p>
+    
+    </div>
+    
+    `
+
+    console.log(id);
+}
+
+
+
 
 
 window.onload = (e) => {
