@@ -6,7 +6,7 @@ Submitted by: **Amaar**
 
 Estimated time spent: **#** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): https://amaarm.github.io/flixster_starter/
 
 ### Application Features
 
@@ -34,17 +34,16 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 #### STRETCH FEATURES
 
-- [ ] Deploy website using GitHub Pages. 
+- [X] Deploy website using GitHub Pages. 
 - [X] Allow user to view more details about a movie within a popup.
 - [X] Improve the user experience through CSS & animation.
 - [ ] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
 - [X] Implement anything else that you can get done to improve the app functionality!
 
-### Walkthrough Video
-
 `TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
 
-`ADD_EMBEDDED_CODE_HERE`
+https://streamable.com/32yge4
+
 
 ### Reflection
 
@@ -54,11 +53,11 @@ A. Yes they prepared me for extremely well to complete the project. Of course yo
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-A. I would have  
+A. I would have planned it more thorughly and would tackle each part of the website in a more organized manner. 
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-There were many cool features I saw that I would implement next time. The project demo could be better, but that'll come with experience. 
+A. There were many cool features I saw that I would implement next time. The project demo could be better, but that'll come with experience. 
 
 ### Open-source libraries used
 
