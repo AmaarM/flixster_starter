@@ -13,6 +13,7 @@ const trendingBtn = document.querySelector(".trending");
 const nowPlaying = document.querySelector(".nowPlaying");
 const clearBtn = document.querySelector(".clear");
 const popUpArea = document.querySelector(".pop-up");
+
 let page = 1;
 
 
@@ -109,11 +110,28 @@ async function clearSearch(e){
 }
 
 
-function showPopUp(id){
-    popUpArea.innerHTML += `
-    <div>
-        <p class="practice">Hello</p>
+async function showPopUp(id){
+    popUpArea.innerHTML = "";
     
+    let url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`
+    const data = await fetch(url);
+    const getData = await data.json();
+
+    let imgUrl = getData.poster_path;
+    let moviePath = `https://image.tmdb.org/t/p/w185/` + getData.poster_path;
+    let currentMovieTitle = getData.title;
+    let movieDesc = getData.overview;
+    console.log(getData);
+    console.log(moviePath);
+    
+    popUpArea.innerHTML += `
+    <div id="content-wrapper" class="box">
+        <div class="content">
+            <button class="closeBtn" onclick="closePopUp()">X</button>
+            <img class="poster" src="${moviePath}">
+            <h1 class="title">${currentMovieTitle}</h1>
+            <p class="desc">${movieDesc}</p>
+        </div>
     </div>
     
     `
@@ -122,11 +140,11 @@ function showPopUp(id){
 }
 
 
-
-
+function closePopUp(){
+    popUpArea.innerHTML = "";
+}
 
 window.onload = (e) => {
     e.preventDefault();
     getMovies(e);
 }
-
