@@ -35,7 +35,7 @@ body{
     margin-top: 10px;
 }
  
-#inputbox, #submit, .clear{
+#input-box, #close-search-btn, .clear{
     padding: 12px;
     font-weight: bold;
     border-radius: 5px;
@@ -43,11 +43,11 @@ body{
     transition: opacity .15s;
 }
  
-#submit:hover, .clear:hover{
+#close-search-btn:hover, .clear:hover{
     opacity: .5;
 }
  
-#submit, .clear{
+#close-search-btn, .clear{
     cursor: pointer;
     margin-left: 4px;
 }
@@ -87,21 +87,21 @@ body{
 }
  
 /*Styling for Movie Area*/
-.oneMovie{
+.movie-poster{
     transition: opacity .15s;
 }
-.oneMovie:hover{
+.movie-poster:hover{
     opacity: .6;
 }
  
-.movie-wrapper{
+.movies-grid{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
  
-.innerMovieArea{
+.movie-card{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -112,12 +112,12 @@ body{
     border-radius: 5px;
 }
  
-.movie-title, .rating{
+.movie-title, .movie-votes{
     color: white;
     font-size: 14px;
 }
  
-.rating{
+.movie-votes{
     margin-bottom: 5px;
     margin-top: 5px;
 }
@@ -145,7 +145,7 @@ body{
     margin: 15px;
 }
  
-.getMore{
+.load-more-movies-btn{
     padding: 12px;
     font-weight: bold;
     border-radius: 10px;
@@ -153,7 +153,7 @@ body{
     transition: opacity .15s;
 }
  
-.getMore:hover{
+.load-more-movies-btn:hover{
     opacity:.5;
 }
  

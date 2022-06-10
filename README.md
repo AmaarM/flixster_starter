@@ -1,10 +1,9 @@
-📝 `NOTE` Use this template to initialize the contents of a README.md file for your application. As you work on your assignment over the course of the week, update the required or stretch features lists to indicate which features you have completed by changing `[ ]` to `[x]`. (🚫 Remove this paragraph before submitting your assignment.)
 
 ## Week 1 Assignment: Flixster
 
-Submitted by: **Amaar**
+Submitted by: **Amaar Mohamed**
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: **13** hours spent in total
 
 Deployed Application (optional): https://amaarm.github.io/flixster_starter/
 
@@ -40,7 +39,6 @@ Deployed Application (optional): https://amaarm.github.io/flixster_starter/
 - [ ] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
 - [X] Implement anything else that you can get done to improve the app functionality!
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
 
 https://streamable.com/32yge4
 

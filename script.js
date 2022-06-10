@@ -1,11 +1,11 @@
 const apiKey = '3924b5d38a0a34d058ffe49928a2a842';
-const submitBtn = document.getElementById("submit");
-const textBox = document.getElementById("inputbox");
+const submitBtn = document.getElementById("close-search-btn");
+const textBox = document.getElementById("input-box");
 const form = document.getElementById("form");
-const getMore = document.querySelector(".getMore")
+const getMore = document.querySelector(".load-more-movies-btn")
 const footer = document.querySelector(".footer");
-const movieArea = document.querySelector(".movie-wrapper");
-const innerMovieArea = document.querySelector(".innerMovieArea");
+const movieArea = document.querySelector(".movies-grid");
+const innerMovieArea = document.querySelector(".movie-card");
 const infoSection = document.querySelector(".desc")
 const showInfoBtn = document.querySelector(".show-more");
 const closeButton = document.querySelector(".closeBtn");
@@ -41,9 +41,9 @@ async function displayMovies(data){
 
 
     movieArea.innerHTML += ` 
-    <div class="innerMovieArea">     
-        <img class="oneMovie" src='${moviePath}'>    
-        <h3 class="rating">Rating: ${movieRating} </h3>
+    <div class="movie-card">     
+        <img class="movie-poster" src='${moviePath}'>    
+        <h3 class="movie-votes">Rating: ${movieRating} </h3>
         <h3 class="movie-title">${movieTitle}</h3>
         <button class="show-more" onclick="showPopUp(${data.id})">Show Info</button>
     </div>`
