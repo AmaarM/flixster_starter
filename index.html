@@ -4,32 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
     <title>Flixster</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <div class="header-wrapper">
-            <div class="header">
-                <h1 class="title">Flixster</h1>
-                <img class="logo" src="movieLogo.png" alt="nothing">
+        <div class="main-header">  
+            <div class="header-wrapper">
+                <div class="header">
+                    <h1 class="title">Flixster</h1>
+                    <img class="logo" src="movieLogo.png" alt="nothing">
+                </div>
+            </div>
+
+            <div class="form-wrapper">
+                <form id="form">
+                    <input id="inputbox" type="text" placeholder="Type Here">
+                    <input type="submit" id="submit">
+                </form>
+            </div>
+            
+            <div class="section-header">
+                <button class="nowPlaying optionBtn">Now Playing</button>
+                <button class="trending optionBtn">Trending</button>
             </div>
         </div>
-
-        <div class="form-wrapper">
-            <form id="form">
-                <input id="inputbox" type="text" placeholder="Type Here">
-                <input type="submit" id="submit">
-            </form>
-        </div>
         
-        <div class="section-header">
-            <h1 class="nowPlaying">Now Playing</h1>
-        </div>
+        
+        
         <div class="movie-wrapper">
-
+    
         </div>
 
-
+        <div class="info-box closed-1">
+            <div class="info-header">
+                <p></p>
+                <button class="closeBtn">X</button>
+            </div>
+        </div>
 
         <footer class="footer closed">
             <button class="getMore">Need More?</button>
