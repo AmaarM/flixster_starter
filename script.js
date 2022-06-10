@@ -31,7 +31,7 @@ async function getMovies(e){
 }
 
 async function displayMovies(data){
-    let moviePath = `https://image.tmdb.org/t/p/w185` + data.poster_path;
+    let moviePath = `https://image.tmdb.org/t/p/w300` + data.poster_path;
     let movieTitle = data.title;
     let movieRating = data.vote_average;
     console.log(data);
@@ -58,6 +58,7 @@ function getMoreResults(e){
     }
 }
 
+//
 submitBtn.addEventListener('click', searchMovie);
 async function searchMovie(e){
     e.preventDefault();
@@ -71,6 +72,7 @@ async function searchMovie(e){
 
 }
 
+//display new results when textbox value is prompted
 textBox.addEventListener('change', displayNewResults);
 async function displayNewResults(e){
     movieArea.innerHTML = "";
@@ -82,12 +84,14 @@ async function displayNewResults(e){
     }
 }
 
+//Shows now playing movies when button is clicked
 nowPlaying.addEventListener('click', e =>{
     movieArea.innerHTML = "";
     textBox.value = "";
     getMovies(e);
 })
 
+//Shows trending movies when trending button is click 
 trendingBtn.addEventListener('click', showTrending);
 async function showTrending(){
     let url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${page}`
@@ -102,6 +106,8 @@ async function showTrending(){
     });
 }
 
+
+//Clear's search bar when prompted
 clearBtn.addEventListener('click', clearSearch);
 async function clearSearch(e){
     textBox.value = "";
@@ -118,9 +124,11 @@ async function showPopUp(id){
     const getData = await data.json();
 
     let imgUrl = getData.poster_path;
-    let moviePath = `https://image.tmdb.org/t/p/w185/` + getData.poster_path;
+    let moviePath = `https://image.tmdb.org/t/p/w300/` + getData.poster_path;
     let currentMovieTitle = getData.title;
     let movieDesc = getData.overview;
+    let release = getData.release_date;
+    console.log(release);
     console.log(getData);
     console.log(moviePath);
     
@@ -129,7 +137,8 @@ async function showPopUp(id){
         <div class="content">
             <button class="closeBtn" onclick="closePopUp()">X</button>
             <img class="poster" src="${moviePath}">
-            <h1 class="title">${currentMovieTitle}</h1>
+            <h1 class="title-1">${currentMovieTitle}</h1>
+            <h3 class="release">| ${release} |</h3>
             <p class="desc">${movieDesc}</p>
         </div>
     </div>

@@ -86,8 +86,10 @@ body{
 
 /*Styling for Movie Area*/
 .oneMovie{
-    width: 200px;
-    height: 300px;
+    transition: opacity .15s;
+}
+.oneMovie:hover{
+    opacity: .6;
 }
 
 .movie-wrapper{
@@ -103,8 +105,9 @@ body{
     justify-content: space-between;
     margin: 25px;
     border-style: solid;
-    border-width: 4px;
-    border-color: #333;
+    border-width: 3px;
+    border-color:#333;
+    border-radius: 5px;
 }
 
 
@@ -205,10 +208,6 @@ body{
     width: 700px;
 }
 
-.poster{
-    width: 300px;
-    height: 300px;
-}
 
 .popup-header{
     display: flex;
@@ -216,23 +215,45 @@ body{
 }
 
 /*Pop up styling*/
+/*Styling pop up box from W3Schools*/
 .box{
-    display: flex;
-    justify-content: space-around;
-    z-index: 1;
-    top: 50%;
-    left: 45%;
-    margin-top: -250px;
-    margin-left: -250px;
-    position: fixed;
-    background-color: #333;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,.9); /* Black w/ opacity */
 }
 .content{
     align-items: center;
-    margin-bottom: 20px;
+    margin-top: 100px;
 }
 
 .closeBtn{
     padding: 10px;
     cursor: pointer;
+    margin-left: 500px;
+}
+
+.desc{
+    width: 550px;
+    line-height: 1.5;
+    font-size: 20px;
+    color: white;
+}
+
+.title-1{
+    margin-top: 20px;
+    overflow: auto;
+    margin-bottom: 10px;
+    color: white;
+}
+.release{
+    color: white;
+}
+.closed1{
+    display: none;
 }
