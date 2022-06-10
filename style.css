@@ -51,6 +51,10 @@ body{
     cursor: pointer;
     margin-left: 4px;
 }
+
+.clear{
+    margin-left: 10px;
+}
  
 /*Styling for "Now Playing*/
 .section-header{
@@ -245,6 +249,13 @@ body{
 .release{
     color: white;
 }
-.closed1{
-    display: none;
+
+
+.form-section{
+    display: flex;
+    justify-content: space-around;
 }
+
+
+
+

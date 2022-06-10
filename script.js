@@ -56,7 +56,7 @@ function getMoreResults(e){
     }
 }
  
-//
+//display's searched movies.
 submitBtn.addEventListener('click', searchMovie);
 async function searchMovie(e){
     e.preventDefault();
@@ -74,6 +74,7 @@ async function searchMovie(e){
 textBox.addEventListener('change', displayNewResults);
 async function displayNewResults(e){
     movieArea.innerHTML = "";
+    textBox.innerHTML = "";
     if(textBox.value){
         searchMovie(e);
     }
@@ -107,9 +108,13 @@ async function showTrending(){
 //Clear's search bar when prompted
 clearBtn.addEventListener('click', clearSearch);
 async function clearSearch(e){
-    textBox.value = "";
-    movieArea.innerHTML = "";
-    nowPlaying(e);
+    console.log(textBox.value);
+    if(textBox.value){
+        textBox.value = "";
+        movieArea.innerHTML = "";
+        getMovies(e);
+    }
+
 }
  
 async function showPopUp(id){
