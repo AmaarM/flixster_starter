@@ -42,6 +42,7 @@ async function displayMovies(data){
         <h3 class="movie-title">${movieTitle}</h3>
         <button class="show-more" onclick="showPopUp(${data.id})">Show Info</button>
     </div>`
+    console.log(data.id);
     footer.classList.remove('closed')
 }
 
