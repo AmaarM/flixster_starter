@@ -5,38 +5,36 @@
 body{
     background-color: black;
 }
-
+ 
 /*Styling for Header Section*/
 .logo{
     width: 50px;
     z-index: -2;
 }
-
+ 
 .title{
     color: white;
     width: 100px;
 }
-
-
+ 
 .header-wrapper{
     display: flex;
     justify-content: space-around;
-
+ 
 }
 .header{
     display: flex;
     flex-direction: row;
     margin-top: 15px;
 }
-
-
+ 
 /*Styling for Form Section*/
 .form-wrapper{
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
 }
-
+ 
 #inputbox, #submit, .clear{
     padding: 12px;
     font-weight: bold;
@@ -44,16 +42,16 @@ body{
     border: none;
     transition: opacity .15s;
 }
-
+ 
 #submit:hover, .clear:hover{
     opacity: .5;
 }
-
+ 
 #submit, .clear{
     cursor: pointer;
     margin-left: 4px;
 }
-
+ 
 /*Styling for "Now Playing*/
 .section-header{
     display: flex;
@@ -63,7 +61,7 @@ body{
     border-style: groove;
     border-color: #333;
 }
-
+ 
 .optionBtn{
     background-color: black;
     padding: 15px;
@@ -79,11 +77,11 @@ body{
 .optionBtn:hover{
     opacity: .5;
 }
-
+ 
 .optionBtn:active{
     box-shadow: none;
 }
-
+ 
 /*Styling for Movie Area*/
 .oneMovie{
     transition: opacity .15s;
@@ -91,14 +89,14 @@ body{
 .oneMovie:hover{
     opacity: .6;
 }
-
+ 
 .movie-wrapper{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
-
+ 
 .innerMovieArea{
     display: flex;
     flex-direction: column;
@@ -109,22 +107,21 @@ body{
     border-color:#333;
     border-radius: 5px;
 }
-
-
+ 
 .movie-title, .rating{
     color: white;
     font-size: 14px;
 }
-
+ 
 .rating{
     margin-bottom: 5px;
     margin-top: 5px;
 }
-
+ 
 .movie-title{
     width: 200px;
 }
-
+ 
 .show-more{
     background-color: gray;
     padding: 5px;
@@ -136,15 +133,13 @@ body{
 }
 
 
-
-
 /*Styling for Footer*/
 .footer{
     display: flex;
     justify-content: space-around;
     margin: 15px;
 }
-
+ 
 .getMore{
     padding: 12px;
     font-weight: bold;
@@ -152,22 +147,20 @@ body{
     cursor: pointer;
     transition: opacity .15s;
 }
-
+ 
 .getMore:hover{
     opacity:.5;
 }
-
-
+ 
 /*Footer Styling*/
 .closed{
     display: none;
 }
-
+ 
 .closed-1{
     display: none;
 }
-
-
+ 
 .info-box{
     position: absolute;
     top: 50%;
@@ -178,13 +171,11 @@ body{
     height: 500px;
     background-color: white;
 }
-
+ 
 .info-header{
     display: flex;
     justify-content: space-between;
 }
-
-
 
 
 
@@ -207,13 +198,12 @@ body{
     color: white;
     width: 700px;
 }
-
-
+ 
 .popup-header{
     display: flex;
     justify-content: space-between;
 }
-
+ 
 /*Pop up styling*/
 /*Styling pop up box from W3Schools*/
 .box{
@@ -231,20 +221,20 @@ body{
     align-items: center;
     margin-top: 100px;
 }
-
+ 
 .closeBtn{
     padding: 10px;
     cursor: pointer;
     margin-left: 500px;
 }
-
+ 
 .desc{
     width: 550px;
     line-height: 1.5;
     font-size: 20px;
     color: white;
 }
-
+ 
 .title-1{
     margin-top: 20px;
     overflow: auto;

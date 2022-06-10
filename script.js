@@ -13,23 +13,22 @@ const trendingBtn = document.querySelector(".trending");
 const nowPlaying = document.querySelector(".nowPlaying");
 const clearBtn = document.querySelector(".clear");
 const popUpArea = document.querySelector(".pop-up");
-
+ 
 let page = 1;
-
-
+ 
 async function getMovies(e){
     e.preventDefault();
     let url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${page}`;
     const data = await fetch(url);
     const getData = await data.json();
-
+ 
     page+=1;
-
+ 
     getData.results.forEach(e =>{
         displayMovies(e);
     });
 }
-
+ 
 async function displayMovies(data){
     let moviePath = `https://image.tmdb.org/t/p/w300` + data.poster_path;
     let movieTitle = data.title;
@@ -44,12 +43,11 @@ async function displayMovies(data){
     </div>`
     footer.classList.remove('closed')
 }
-
-
+ 
 getMore.addEventListener('click', getMoreResults);
 function getMoreResults(e){
     e.preventDefault();
-
+ 
     if(textBox.value){
         searchMovie(e);
     }
@@ -57,7 +55,7 @@ function getMoreResults(e){
         getMovies(e);
     }
 }
-
+ 
 //
 submitBtn.addEventListener('click', searchMovie);
 async function searchMovie(e){
@@ -69,9 +67,9 @@ async function searchMovie(e){
     searchData.results.forEach(e => {
         displayMovies(e);
     });
-
+ 
 }
-
+ 
 //display new results when textbox value is prompted
 textBox.addEventListener('change', displayNewResults);
 async function displayNewResults(e){
@@ -83,14 +81,14 @@ async function displayNewResults(e){
         getMovies(e);
     }
 }
-
+ 
 //Shows now playing movies when button is clicked
 nowPlaying.addEventListener('click', e =>{
     movieArea.innerHTML = "";
     textBox.value = "";
     getMovies(e);
 })
-
+ 
 //Shows trending movies when trending button is click 
 trendingBtn.addEventListener('click', showTrending);
 async function showTrending(){
@@ -99,14 +97,13 @@ async function showTrending(){
     const getData = await data.json();
     textBox.value = "";
     
-
+ 
     movieArea.innerHTML = "";
     getData.results.forEach(e =>{
         displayMovies(e);
     });
 }
-
-
+ 
 //Clear's search bar when prompted
 clearBtn.addEventListener('click', clearSearch);
 async function clearSearch(e){
@@ -114,15 +111,14 @@ async function clearSearch(e){
     movieArea.innerHTML = "";
     nowPlaying(e);
 }
-
-
+ 
 async function showPopUp(id){
     popUpArea.innerHTML = "";
     
     let url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`
     const data = await fetch(url);
     const getData = await data.json();
-
+ 
     let imgUrl = getData.poster_path;
     let moviePath = `https://image.tmdb.org/t/p/w300/` + getData.poster_path;
     let currentMovieTitle = getData.title;
@@ -144,16 +140,17 @@ async function showPopUp(id){
     </div>
     
     `
-
+ 
     console.log(id);
 }
-
-
+ 
 function closePopUp(){
     popUpArea.innerHTML = "";
 }
-
+ 
 window.onload = (e) => {
     e.preventDefault();
     getMovies(e);
 }
+ 
+ 
