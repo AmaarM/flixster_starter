@@ -16,6 +16,9 @@ const popUpArea = document.querySelector(".pop-up");
  
 let page = 1;
  
+
+
+//Grab's now playing movies and displays them
 async function getMovies(e){
     e.preventDefault();
     let url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${page}`;
@@ -29,11 +32,14 @@ async function getMovies(e){
     });
 }
  
+
+//Displays a singular movie
 async function displayMovies(data){
     let moviePath = `https://image.tmdb.org/t/p/w300` + data.poster_path;
     let movieTitle = data.title;
     let movieRating = data.vote_average;
-    console.log(data);
+
+
     movieArea.innerHTML += ` 
     <div class="innerMovieArea">     
         <img class="oneMovie" src='${moviePath}'>    
@@ -44,6 +50,8 @@ async function displayMovies(data){
     footer.classList.remove('closed')
 }
  
+
+//Shows more movies when prompted
 getMore.addEventListener('click', getMoreResults);
 function getMoreResults(e){
     e.preventDefault();
@@ -108,7 +116,7 @@ async function showTrending(){
 //Clear's search bar when prompted
 clearBtn.addEventListener('click', clearSearch);
 async function clearSearch(e){
-    console.log(textBox.value);
+
     if(textBox.value){
         textBox.value = "";
         movieArea.innerHTML = "";
@@ -116,7 +124,9 @@ async function clearSearch(e){
     }
 
 }
- 
+
+
+//Shows pop up when prompted
 async function showPopUp(id){
     popUpArea.innerHTML = "";
     
@@ -129,9 +139,7 @@ async function showPopUp(id){
     let currentMovieTitle = getData.title;
     let movieDesc = getData.overview;
     let release = getData.release_date;
-    console.log(release);
-    console.log(getData);
-    console.log(moviePath);
+ 
     
     popUpArea.innerHTML += `
     <div id="content-wrapper" class="box">
@@ -145,14 +153,15 @@ async function showPopUp(id){
     </div>
     
     `
- 
-    console.log(id);
 }
  
+
+//Closes Popup when prompted
 function closePopUp(){
     popUpArea.innerHTML = "";
 }
  
+//Loads Movies
 window.onload = (e) => {
     e.preventDefault();
     getMovies(e);
