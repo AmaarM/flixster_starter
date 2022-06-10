@@ -123,10 +123,11 @@ body{
 }
  
 .show-more{
-    background-color: gray;
+    background-color: rgba(158, 158, 158, 0.9);
     padding: 5px;
     cursor: pointer;
     transition: opacity .15s;
+    font-size: 16px;
 }
 .show-more:hover{
     opacity: .8;
