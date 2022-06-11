@@ -36,7 +36,7 @@ Deployed Application (optional): https://amaarm.github.io/flixster_starter/
 - [X] Deploy website using GitHub Pages. 
 - [X] Allow user to view more details about a movie within a popup.
 - [X] Improve the user experience through CSS & animation.
-- [ ] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
+- [X] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
 - [X] Implement anything else that you can get done to improve the app functionality!
 
 

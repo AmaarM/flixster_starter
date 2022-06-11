@@ -41,12 +41,14 @@ async function displayMovies(data){
 
 
     movieArea.innerHTML += ` 
-    <div class="movie-card">     
-        <img class="movie-poster" src='${moviePath}'>    
-        <h3 class="movie-votes">Rating: ${movieRating} </h3>
-        <h3 class="movie-title">${movieTitle}</h3>
-        <button class="show-more" onclick="showPopUp(${data.id})">Show Info</button>
-    </div>`
+        <div class="movie-card">     
+            <img class="movie-poster" src='${moviePath}'>    
+            <h3 class="movie-votes">Rating: ${movieRating} </h3>
+            <h3 class="movie-title">${movieTitle}</h3>
+            <button class="show-more" onclick="showPopUp(${data.id})">Show Info</button>
+        </div>
+        
+    `
     footer.classList.remove('closed')
 }
  
@@ -131,25 +133,37 @@ async function showPopUp(id){
     popUpArea.innerHTML = "";
     
     let url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`
+    let videoUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}&language=en-US`
     const data = await fetch(url);
     const getData = await data.json();
- 
+
+    const videoData = await fetch(videoUrl);
+    const getVideoData= await videoData.json();
+    let videoKey = getVideoData.results[0].key;
+    let video = `https://www.youtube.com/embed/${videoKey}`
+    
     let imgUrl = getData.poster_path;
     let moviePath = `https://image.tmdb.org/t/p/w300/` + getData.poster_path;
     let currentMovieTitle = getData.title;
     let movieDesc = getData.overview;
     let release = getData.release_date;
- 
     
+    console.log(getData);
+    console.log(video);
+
     popUpArea.innerHTML += `
     <div id="content-wrapper" class="box">
         <div class="content">
-            <button class="closeBtn" onclick="closePopUp()">X</button>
-            <img class="poster" src="${moviePath}">
+            <button class="closeBtn" onclick="closePopUp()">Close</button>
+            <div class="show-video">
+                <iframe width="750px" class="trailer" src="${video}"></iframe>
+                <img class="poster" src="${moviePath}">
+            </div>
             <h1 class="title-1">${currentMovieTitle}</h1>
             <h3 class="release">| ${release} |</h3>
             <p class="desc">${movieDesc}</p>
         </div>
+
     </div>
     
     `
